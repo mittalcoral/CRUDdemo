@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Record</title>
+    <style>
+        div{
+            margin-left: 50px;
+            height: 200px;
+            width: 200px;
+             display: flex;
+             flex-direction: column;
+             justify-content: space-around;
+             font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="/user">
+        <div>
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="password" name="password" placeholder="Enter new password"required>
+        <input type="text" name="username" placeholder="Add your username"required>
+        <button>Create Account</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        table {
+            text-align: center;
+            margin: auto;
+        }
+
+        th {
+            background-color: rgb(247, 148, 181);
+        }
+
+        td {
+            background-color: rgb(255, 254, 185);
+        }
+
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/user/new">
+    <button>Create your own account</button>
+</a>
+    <br><br>
+    <table>
+        <tr>
+            <th>User Id</th>
+            <th>User Name</th>
+            <th>Email Address</th>
+        </tr>
+        <% for(user of users) { %>
+            <tr>
+                <td>
+                    <%= user.id %>
+                </td>
+                <td>
+                    <%= user.username %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td>
+                    <form method="GET" action="/user/<%=user.id%>/edit">
+                        <button>Edit Username</button>
+                    </form>
+                </td>\<td>
+                    <form method="GET" action="/user/<%=user.id%>/delete">
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+
+    <% if (showDeleted) { %>
+        <script>
+            alert("Record deleted successfully!");
+        </script>
+        <% } %>
+
+            <% if (showAdded) { %>
+                <script>
+                    alert("User added successfully!");
+                </script>
+                <% } %>
+
+
+</body>
+
+</html>

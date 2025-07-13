@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <style>
+        div{
+            margin-left: 50px;
+            height: 100px;
+            width: 200px;
+             display: flex;
+             flex-direction: column;
+             justify-content: space-around;
+             font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <h2><%=user.username%> fill your details to permanently delete your account</h2>
+    <form method="POST" action="/user/<%=user.id%>?_method=DELETE">
+        <div>
+            <input type="text" name="email" placeholder="Enter your email">
+        <input type="password" name="password" placeholder="Enter Your password">
+        <button>Delete Permanently</button>
+        </div>
+    </form>
+</body>
+</html>
